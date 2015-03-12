@@ -1,0 +1,10 @@
+<%= form_for(@url) do |f| %>
+  <div class="field">
+  	<%= f.label 'Link to' %>
+    <%= f.text_field :target, placeholder: "Url to link to..." %> </br>
+
+    <%= f.label 'Shortened url' %>
+    <%= f.text_field :shortened, value: @defaultShortenedUrl %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

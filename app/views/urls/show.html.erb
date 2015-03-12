@@ -1,0 +1,13 @@
+<head>
+<script type="text/javascript">
+function delayedRedirect(){
+	window.location = "<%= @target_url %>"
+}
+window.onLoad = setTimeout(delayedRedirect, 3000)
+</script>
+</head>
+
+Redirecting to <%= @target_url %> in 3 seconds
+
+
+</body>
