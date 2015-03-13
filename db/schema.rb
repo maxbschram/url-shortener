@@ -13,9 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150312220336) do
 
-  create_table "urls", force: true do |t|
-    t.string   "target"
-    t.string   "shortened"
+  create_table "urls", force: :cascade do |t|
+    t.string   "target",     limit: 255
+    t.string   "shortened",  limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
