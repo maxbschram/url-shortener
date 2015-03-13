@@ -1,1 +1,1 @@
-<h2><%= "#{request.host}/#{@url.shortened}" %> will now redirect to <%= "#{@url.target}" %></h2>
+<h3><%= link_to("#{request.host}/#{@url.shortened}", "http://#{request.host}/#{@url.shortened}") %> will now redirect to <%= link_to("#{@url.target}", @url.target) %></h3>

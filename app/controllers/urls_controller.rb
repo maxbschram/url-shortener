@@ -7,6 +7,9 @@ class UrlsController < ApplicationController
 
   def create
   	@url = Url.new(url_params)
+    if !@url.target.include? "http://"
+      @url.target = "http://#{@url.target}"
+    end
   	if @url.save
   		# Handle a successful save
   	else
@@ -29,7 +32,7 @@ class UrlsController < ApplicationController
   	def url_params
   		params.require(:url).permit(:target, :shortened)
   	end
-    
+
     def current_url
       @url ||= Url.find_by(shortened: params[:id])
     end
